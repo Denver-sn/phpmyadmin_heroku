@@ -26,9 +26,23 @@ $i = 0;
  */
 $i++;
 /* Authentication type */
-$cfg['Servers'][$i]['auth_type'] = 'cookie';
+$cfg['blowfish_secret'] = $_ENV['PHPMYADMIN_BLOWFISH_SECRET']; /* YOU MUST FILL IN THIS FOR COOKIE AUTH! */
+
+/**
+ * Servers configuration
+ */
+$i = 0;
+
+/**
+ * First server
+ */
+$i++;
+/* Authentication type */
+$cfg['Servers'][$i]['auth_type'] = 'config';
 /* Server parameters */
-$cfg['Servers'][$i]['host'] = $_ENV['MYSQL_HOST'];
+$cfg['Servers'][$i]['host'] = 'https://php-my-admin-denver.herokuapp.com';
+$cfg['Servers'][$i]['user'] = 'root';
+$cfg['Servers'][$i]['password'] = 'denver@';
 $cfg['Servers'][$i]['compress'] = false;
 $cfg['Servers'][$i]['AllowNoPassword'] = true;
 
